@@ -3,6 +3,8 @@
     --light-gray: hsl(212, 45%, 89%);
     --grayish-blue: hsl(220, 15%, 55%);
     --dark-blue: hsl(218, 44%, 22%);
+    
+    --card-size: 300px;
 }
 
 body {
@@ -13,6 +15,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--light-gray);
+    user-select: none;
 }
 
 p {
@@ -21,13 +24,15 @@ p {
 }
 
 img {
-    width: 300px;
-    height: 300px;
+    width: var(--card-size);
+    height: var(--card-size);
     border-radius: 10px;
+    pointer-events: none;
 }
 
 .card {
-    width: 300px;
+    position: absolute;
+    width: var(--card-size);
     padding: 16px;
     background-color: var(--white);
     display: flex;
@@ -50,10 +55,15 @@ img {
     color: var(--dark-blue);
 }
 
-.description-text {
+.description-text, .attribution{
     font-size: 15px;
     font-weight: 400;
     color: var(--grayish-blue);
+}
+
+.attribution {
+    position: relative;
+    top: calc(50% - 15px);
 }
 
 
